@@ -1,0 +1,152 @@
+# Collection of profiles to define what happens when a key on the remote is pressed
+# Each profile has three attributes: name -> str, description -> str, map -> object
+# Every attribute of the map corresponds to a key on the remote
+# This attribute's value is an object, which contains three attributes:
+# type, value and description -> string
+# type -> enum(key, cmd, profile)
+# if type == key, value -> list. Key(s) to press. Shortcuts and hotkeys can be defined
+# Refer to https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key
+# for a list of supported keys. For alphanum keys or special characters, just put them.
+# if type == cmd, value -> str. value is the path to the exectuable or a shell command
+# if type == profile, no value. profile maps the remote key to switching to the next profile
+profiles:
+- name: pc
+  description: Generic PC controls
+  map:
+    ED12FF00:
+      type: key
+      value: [media_volume_up]
+      description: Vol+
+    E916FF00:
+      type: key
+      value: [media_volume_down]
+      description: Vol-
+    E619FF00:
+      type: key
+      value: [media_volume_mute]
+      description: Mute
+    FE01FF00:
+      type: key
+      value: [media_play_pause]
+      description: Play/Pause Media
+    EA15FF00:
+      type: key
+      value: [media_next]
+      description: Next Media
+    EB14FF00:
+      type: key
+      value: [media_previous]
+      description: Previous Media
+    F20DFF00:
+      type: key
+      value: [alt, f4]
+      description: 8 -> Close Window
+    F30CFF00:
+      type: key
+      value: [alt, shift, tab]
+      description: 7 -> Previous Window
+    F10EFF00:
+      type: key
+      value: [alt, esc]
+      description: 9 -> Next Window
+    EE11FF00:
+      type: key
+      value: [cmd, up]
+      description: 10+ -> Maximize Window
+    EF10FF00:
+      type: key
+      value: [enter]
+      description: 0 -> Enter
+    FF00FF00:
+      type: cmd
+      value: "shutdown -s"
+      description: Power
+    FB04FF00:
+      type: cmd
+      value: "C:\\Users\\%USERNAME%\\Desktop\\Steam.lnk"
+      description: 1 -> Steam
+    FA05FF00:
+      type: cmd
+      value: "C:\\Users\\%USERNAME%\\Desktop\\Visual Studio Code.lnk"
+      description: 2 -> VS Code
+    F906FF00:
+      type: cmd
+      value: "C:\\Users\\%USERNAME%\\Desktop\\Arduino.lnk"
+      description: 3 -> Arduino
+    F708FF00:
+      type: cmd
+      value: "C:\\Users\\%USERNAME%\\Desktop\\Firefox.lnk"
+      description: 4 -> Firefox
+    F609FF00:
+      type: cmd
+      value: "C:\\Users\\%USERNAME%\\Desktop\\YouTube Music.url"
+      description: 5 -> YouTube Music
+    F50AFF00:
+      type: cmd
+      value: "C:\\Users\\%USERNAME%\\Desktop\\Mail.lnk"
+      description: 6 -> Mail
+    E718FF00:
+      type: key
+      value: [cmd, e]
+      description: Eq -> Explorer
+    E51AFF00:
+      type: cmd
+      value: wt
+      description: Repeat -> Windows Terminal
+    FD02FF00:
+      type: profile
+      description: Mode -> Switch Profile
+- name: code
+  description: VS Code controls
+  map:
+    FB04FF00:
+      type: key
+      value: [f5]
+      description: 1 -> Continue/Pause
+    FA05FF00:
+      type: key
+      value: [ctrl, shift, f5]
+      description: 2 -> Restart
+    F906FF00:
+      type: key
+      value: [shift, f5]
+      description: 3 -> Stop
+    F708FF00:
+      type: key
+      value: [f10]
+      description: 4 -> Step Over
+    F609FF00:
+      type: key
+      value: [f11]
+      description: 5 -> Step Into
+    F50AFF00:
+      type: key
+      value: [shift, f11]
+      description: 6 -> Step Out
+- name: browser
+  description: Browser controls
+  map:
+    FB04FF00:
+      type: key
+      value: [ctrl, tab]
+      description: 1 -> Cycle Tab
+    FA05FF00:
+      type: key
+      value: [ctrl, w]
+      description: 2 -> Close Tab
+    F906FF00:
+      type: key
+      value: [page_up]
+      description: 3 -> Scroll Up
+    F708FF00:
+      type: key
+      value: [alt, left]
+      description: 4 -> Previous Page
+    F609FF00:
+      type: key
+      value: [alt, right]
+      description: 5 -> Next Page
+    F50AFF00:
+      type: key
+      value: [page_down]
+      description: 6 -> Scroll Down
