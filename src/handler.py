@@ -1,7 +1,7 @@
 from pynput.keyboard import Controller, Key
 import os
 
-from profile_repository import ProfileRepository
+from profiles import ProfileRepository
 
 profiles = ProfileRepository()
 _keyboard = Controller()
@@ -52,7 +52,7 @@ def handle_input(data):
         if key_map["type"] == "key":
             _execute_shortcut(key_map["value"])
         elif key_map["type"] == "cmd":
-            os.system(f'"{key_map["value"]}"')
+            os.system(f'""{key_map["value"]}""')
         elif key_map["type"] == "profile":
             profiles.load_next_profile()
 
