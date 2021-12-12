@@ -1,0 +1,8 @@
+colorama==0.4.4
+loguru==0.5.3
+notify-py==0.3.3
+pynput==1.7.5
+pyserial==3.5
+PyYAML==6.0
+six==1.16.0
+win32-setctime==1.0.4
