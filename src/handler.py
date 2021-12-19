@@ -1,5 +1,5 @@
 from pynput.keyboard import Controller, Key
-import os
+import subprocess
 
 from profiles import ProfileRepository
 
@@ -52,7 +52,7 @@ def handle_input(data):
         if key_map["type"] == "key":
             _execute_shortcut(key_map["value"])
         elif key_map["type"] == "cmd":
-            os.system(f'""{key_map["value"]}""')
+            subprocess.Popen(key_map["value"], shell=True)
         elif key_map["type"] == "profile":
             profiles.load_next_profile()
 
