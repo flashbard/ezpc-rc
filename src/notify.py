@@ -3,7 +3,7 @@ from notifypy import Notify
 def create_notification(title, message=None, icon=None):
     notification = Notify()
 
-    notification.application_name = "lazy-rc"
+    notification.application_name = "ezpc-rc"
     notification.title = title
 
     if message:
