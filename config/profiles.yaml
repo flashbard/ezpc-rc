@@ -8,6 +8,8 @@
 # Refer to https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key
 # for a list of supported keys. For alphanum keys or special characters, just put them.
 # if type == cmd, value -> str. value is the path to the exectuable or a shell command
+# Also, for commands, if using file paths with spaces, make sure to single + double quote it
+# This will treat the value as a raw string, considering spaces etc.
 # if type == profile, no value. profile maps the remote key to switching to the next profile
 profiles:
 - name: pc
@@ -63,27 +65,27 @@ profiles:
       description: Power
     FB04FF00:
       type: cmd
-      value: "C:\\Users\\%USERNAME%\\Desktop\\Steam.lnk"
+      value: '"C:\Users\%USERNAME%\Desktop\Steam.lnk"'
       description: 1 -> Steam
     FA05FF00:
       type: cmd
-      value: "C:\\Users\\%USERNAME%\\Desktop\\Visual Studio Code.lnk"
+      value: '"C:\Users\%USERNAME%\Desktop\Visual Studio Code.lnk"'
       description: 2 -> VS Code
     F906FF00:
       type: cmd
-      value: "C:\\Users\\%USERNAME%\\Desktop\\Arduino.lnk"
+      value: '"C:\Users\%USERNAME%\Desktop\Arduino.lnk"'
       description: 3 -> Arduino
     F708FF00:
       type: cmd
-      value: "C:\\Users\\%USERNAME%\\Desktop\\Firefox.lnk"
+      value: '"C:\Users\%USERNAME%\Desktop\Firefox.lnk"'
       description: 4 -> Firefox
     F609FF00:
       type: cmd
-      value: "C:\\Users\\%USERNAME%\\Desktop\\YouTube Music.url"
+      value: '"C:\Users\%USERNAME%\Desktop\YouTube Music.url"'
       description: 5 -> YouTube Music
     F50AFF00:
       type: cmd
-      value: "C:\\Users\\%USERNAME%\\Desktop\\Mail.lnk"
+      value: '"C:\Users\%USERNAME%\Desktop\Mail.lnk"'
       description: 6 -> Mail
     E718FF00:
       type: key
@@ -150,3 +152,30 @@ profiles:
       type: key
       value: [page_down]
       description: 6 -> Scroll Down
+- name: netflix
+  description: Netflix controls
+  map:
+    FB04FF00:
+      type: key
+      value: [left]
+      description: 1 -> Rewind 10 seconds
+    FA05FF00:
+      type: key
+      value: [right]
+      description: 2 -> Fast forward 10 seconds
+    F906FF00:
+      type: key
+      value: [f]
+      description: 3 -> Full screen
+    F708FF00:
+      type: key
+      value: [s]
+      description: 4 -> Skip Intro
+    F609FF00:
+      type: key
+      value: [tab]
+      description: 5 -> Pointer selection
+    F50AFF00:
+      type: key
+      value: [esc]
+      description: 6 -> Exit full screen
